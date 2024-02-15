@@ -4,7 +4,8 @@ date: last-modified
 author: Charalampos A. Lazaris
 toc: true
 toc-depth: 2
-format: 
+format:
+    gfm: default 
     html:
         theme: cerulean
         embed-resources: true
