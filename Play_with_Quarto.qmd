@@ -1,0 +1,62 @@
+---
+title: "Play with Quarto v. 1.4"
+date: last-modified
+author: Charalampos A. Lazaris
+toc: true
+toc-depth: 2
+format: 
+    html:
+        theme: cerulean
+        embed-resources: true
+        fontsize: 1.5em
+code-line-numbers: true
+code-overflow: scroll
+code-fold: show
+highlight-style: tango
+keywords: ["Quarto", "tutorial", "R"]
+---
+
+# Introduction
+
+This is a Quarto tutorial based on the official Posit cheatsheet. It features some of the new features in Quarto v. 1.4. 
+
+# Code
+
+Let's insert some inline code in R: `{r} p <- 1 + 1` gives `{r} p`
+
+Here is some `R` code:
+
+```{r}
+p <- 1 + 1
+print(p)
+```
+
+Now, let's import some data and create a graph, after loading the required libraries:
+
+```{r}
+#| warning: false # Do not display warnings
+library(tidyverse)
+```
+
+```{r}
+data(iris)
+glimpse(iris)
+```
+
+We now plot `Petal.Length` vs. `Petal.Width`:
+
+```{r}
+#| fig-align: center
+#| fig-height: 6
+#| fig-width: 8
+ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE) +
+    ggtitle("Petal length vs. petal width") +
+    xlab("Petal width") + ylab("Petal length") +
+    theme_bw()
+```
+
+::: {.callout-tip title="Consistency" collapse="true"}
+Use `dplyr` for data wrangling and `ggplot2` for plotting - keep it consistent
+:::
