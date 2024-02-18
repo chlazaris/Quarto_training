@@ -1,9 +1,10 @@
 # Play with Quarto v. 1.4
 Charalampos A. Lazaris
-2024-02-15
+2024-02-18
 
 - [Introduction](#introduction)
 - [Code](#code)
+  - [`Markdown` formatting:](#markdown-formatting)
 
 # Introduction
 
@@ -63,6 +64,7 @@ We now plot `Petal.Length` vs. `Petal.Width`:
 <summary>Code</summary>
 
 ``` r
+#| fig-cap: "Petal length vs. petal width in iris species"
 ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length)) +
     geom_point() +
     geom_smooth(method = "lm", se = TRUE) +
@@ -85,3 +87,46 @@ data-fig-align="center" />
 >
 > Use `dplyr` for data wrangling and `ggplot2` for plotting - keep it
 > consistent
+
+## `Markdown` formatting:
+
+Here is some **bold** text and here is some text in *italics*. We can
+also <u>text</u> or strikethrough text: ~~hello~~. We can also create
+some lists. Let’s start with a numbered list:
+
+1.  First
+2.  Second
+3.  Third
+
+Now, let’s make the same list, nested:
+
+1.  First
+    1.  Hello
+    2.  Hi
+    3.  Ciao
+2.  Second
+3.  Third
+
+We can also have unordered lists:
+
+- First
+  - Hello
+  - Hi
+  - Ciao
+    - 1
+- Second
+- Third
+
+We can also insert links to URLs: [my
+website](https://chlazaris.netlify.app) or links to pictures. Here is a
+photo of my favorite writer:
+
+![Camus](https://www.nobelprize.org/images/camus-13118-portrait-mini-2x.jpg)
+
+We can also insert tables:
+
+| ID  | Name       | Surname |
+|-----|------------|---------|
+| 1   | James      | Dean    |
+| 2   | Marlon     | Brando  |
+| 3   | Montgomery | Cliff   |
